@@ -143,28 +143,26 @@ def sailor_test(reward_map, Q, num_of_episodes):
             sum_of_rewards[episode] += reward
     print('test-'+str(num_of_episodes)+' mean sum of rewards = ' + str(np.mean(sum_of_rewards)))
 
-def sailor_train(reward_map, Q, num_of_episodes, gamma, init_state, first_training):
+def sailor_train_strategy_iteration(reward_map, Q, num_of_episodes, gamma, init_state, init_action, first_training, epoch):
     num_of_rows, num_of_columns = reward_map.shape
     num_of_steps_max = int(5 * (num_of_rows + num_of_columns))  # maximum number of steps in an episode
     sum_of_rewards = np.zeros([num_of_episodes], dtype=float)
 
-    paths = [[] for _ in range(num_of_episodes)]
-    actions = [[] for _ in range(num_of_episodes)]
     for episode in range(num_of_episodes):
         state = init_state #np.zeros([2], dtype=int)  # initial state here [1 1] but rather random due to exploration
-        state[0] = np.random.randint(0, num_of_rows)
         the_end = False
         nr_pos = 0
         while the_end == False:
             nr_pos = nr_pos + 1  # move number
 
             # Action choosing (1 - right, 2 - up, 3 - left, 4 - bottom):
-            if first_training:
-                action = 1 + np.random.randint(0, 4)
+            if nr_pos == 1:
+                action = 1 + init_action
             else:
-                action = 1 + np.argmax(Q[state[0], state[1], :])
-            paths[episode].append(state)
-            actions[episode].append(action)
+                if first_training:
+                    action = 1 + np.random.randint(0, 4)
+                else:
+                    action = 1 + np.argmax(Q[state[0], state[1], :])
             state_next, reward = environment(state, action, reward_map)
             state = state_next  # going to the next state
 
@@ -176,11 +174,46 @@ def sailor_train(reward_map, Q, num_of_episodes, gamma, init_state, first_traini
             sum_of_rewards[episode] += reward
 
     for episode in range(num_of_episodes):
-        for i in range(len(paths[episode])):
-            Q[paths[episode][i][0]][paths[episode][i][1]][actions[episode][i] - 1] += math.pow(gamma, i) * (sum_of_rewards[episode] / num_of_episodes)
-        print('test-' + str(num_of_episodes) + ' mean sum of rewards = ' + str(np.mean(sum_of_rewards)))
+        Q[init_state[0]][init_state[1]][init_action] += ((math.pow(gamma, epoch) * sum_of_rewards[episode]) / num_of_episodes)
+        #print('test-' + str(num_of_episodes) + ' mean sum of rewards = ' + str(np.mean(sum_of_rewards)))
     return Q
 
+def sailor_train_value_iteration(reward_map, Q, gamma, init_state, init_action, first_training, epoch):
+    num_of_rows, num_of_columns = reward_map.shape
+    num_of_steps_max = int(5 * (num_of_rows + num_of_columns))  # maximum number of steps in an episode
+    sum_of_rewards = np.zeros([num_of_steps_max], dtype=float)
+
+    state = init_state #np.zeros([2], dtype=int)  # initial state here [1 1] but rather random due to exploration
+    the_end = False
+    nr_pos = 0
+    while the_end == False:
+        nr_pos = nr_pos + 1  # move number
+
+        # Action choosing (1 - right, 2 - up, 3 - left, 4 - bottom):
+        if nr_pos == 1:
+            action = 1 + init_action
+        else:
+            if first_training:
+                action = 1 + np.random.randint(0, 4)
+            else:
+                action = 1 + np.argmax(Q[state[0], state[1], :])
+        state_next, reward = environment(state, action, reward_map)
+        state = state_next  # going to the next state
+
+        # end of episode if maximum number of steps is reached or last column
+        # is reached
+        if (nr_pos == num_of_steps_max) | (state[1] >= num_of_columns - 1):
+            the_end = True
+
+        sum_of_rewards[nr_pos - 1] += reward
+    alpha = 0.001
+    reward_factor = 0
+    for i in range(nr_pos):
+        reward_factor += (math.pow(gamma, i) * sum_of_rewards[i])
+    Q[init_state[0]][init_state[1]][init_action] = ((1 - alpha) * Q[init_state[0]][init_state[1]][init_action]) + (alpha * reward_factor)
+
+
+    return Q
 
 # drawing map of rewards and strategy using arrows
 def draw(reward_map, Q):
