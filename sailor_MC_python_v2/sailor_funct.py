@@ -8,6 +8,9 @@ import matplotlib.pyplot as plt
 import matplotlib.cm as cm
 import math
 
+WALL_COLLID_REWARD = -0.1
+APPROPRIATE_MOVE_PROBABILITY = 0.4
+
 def load_data(file_name):
     file_ptr = open(file_name, 'r').read()
     lines = file_ptr.split('\n')
@@ -36,6 +39,29 @@ def load_data(file_name):
             index = index + 1
 
     return map_of_rewards
+
+def sailor_value(reward_map, Q, epoch, init_state, init_action, gamma):
+    num_of_rows, num_of_columns = reward_map.shape
+    num_of_steps_max = int(5 * (num_of_rows + num_of_columns))
+    final_reward = 0.0
+
+    state = init_state
+    the_end = False
+    nr_pos = 0
+    while not the_end:
+        nr_pos = nr_pos + 1
+        action = (init_action if (state[0] == init_state[0] and state[1] == init_state[1]) else np.argmax(Q[state[0], state[1]])) + 1
+        state_next, reward = environment(state, action, reward_map)
+        state = state_next
+
+        if (nr_pos == num_of_steps_max) | (state[1] >= num_of_columns - 1):
+            the_end = True
+
+        final_reward += (gamma ** nr_pos) * reward
+
+    value = Q[init_state[0], init_state[1], init_action]
+    alpha = 1 / epoch
+    Q[init_state[0], init_state[1], init_action] = (1-alpha) * value + alpha * final_reward
 
 def environment(state, action, reward_map):
     num_of_rows, num_of_columns = reward_map.shape
@@ -143,7 +169,7 @@ def sailor_test(reward_map, Q, num_of_episodes):
             sum_of_rewards[episode] += reward
     print('test-'+str(num_of_episodes)+' mean sum of rewards = ' + str(np.mean(sum_of_rewards)))
 
-def sailor_train_strategy_iteration(reward_map, Q, num_of_episodes, gamma, init_state, init_action, first_training, epoch):
+def sailor_train_strategy_iteration(reward_map, Q, num_of_episodes, gamma, init_state, init_action, first_training):
     num_of_rows, num_of_columns = reward_map.shape
     num_of_steps_max = int(5 * (num_of_rows + num_of_columns))  # maximum number of steps in an episode
     sum_of_rewards = np.zeros([num_of_episodes], dtype=float)
@@ -171,17 +197,16 @@ def sailor_train_strategy_iteration(reward_map, Q, num_of_episodes, gamma, init_
             if (nr_pos == num_of_steps_max) | (state[1] >= num_of_columns - 1):
                 the_end = True
 
-            sum_of_rewards[episode] += reward
+            sum_of_rewards[episode] += (reward * np.power(gamma, nr_pos))
 
     for episode in range(num_of_episodes):
-        Q[init_state[0]][init_state[1]][init_action] += ((math.pow(gamma, epoch) * sum_of_rewards[episode]) / num_of_episodes)
-        #print('test-' + str(num_of_episodes) + ' mean sum of rewards = ' + str(np.mean(sum_of_rewards)))
+        Q[init_state[0]][init_state[1]][init_action] += np.mean(sum_of_rewards)
     return Q
 
-def sailor_train_value_iteration(reward_map, Q, gamma, init_state, init_action, first_training, epoch):
+def sailor_train_value_iteration(reward_map, Q, gamma, init_state, init_action, first_training, alpha):
     num_of_rows, num_of_columns = reward_map.shape
     num_of_steps_max = int(5 * (num_of_rows + num_of_columns))  # maximum number of steps in an episode
-    sum_of_rewards = np.zeros([num_of_steps_max], dtype=float)
+    sum_of_rewards = 0
 
     state = init_state #np.zeros([2], dtype=int)  # initial state here [1 1] but rather random due to exploration
     the_end = False
@@ -190,14 +215,10 @@ def sailor_train_value_iteration(reward_map, Q, gamma, init_state, init_action, 
         nr_pos = nr_pos + 1  # move number
 
         # Action choosing (1 - right, 2 - up, 3 - left, 4 - bottom):
-        if nr_pos == 1:
-            action = 1 + init_action
-        else:
-            if first_training:
-                action = 1 + np.random.randint(0, 4)
-            else:
-                action = 1 + np.argmax(Q[state[0], state[1], :])
+        action = (init_action if (state[0] == init_state[0] and state[1] == init_state[1]) else np.argmax(Q[state[0], state[1]])) + 1
         state_next, reward = environment(state, action, reward_map)
+
+        sum_of_rewards += np.power(gamma, nr_pos - 1) * reward
         state = state_next  # going to the next state
 
         # end of episode if maximum number of steps is reached or last column
@@ -205,14 +226,7 @@ def sailor_train_value_iteration(reward_map, Q, gamma, init_state, init_action, 
         if (nr_pos == num_of_steps_max) | (state[1] >= num_of_columns - 1):
             the_end = True
 
-        sum_of_rewards[nr_pos - 1] += reward
-    alpha = 0.001
-    reward_factor = 0
-    for i in range(nr_pos):
-        reward_factor += (math.pow(gamma, i) * sum_of_rewards[i])
-    Q[init_state[0]][init_state[1]][init_action] = ((1 - alpha) * Q[init_state[0]][init_state[1]][init_action]) + (alpha * reward_factor)
-
-
+    Q[init_state[0]][init_state[1]][init_action] = (1 - alpha) * Q[init_state[0]][init_state[1]][init_action] + (alpha * sum_of_rewards)
     return Q
 
 # drawing map of rewards and strategy using arrows
@@ -260,6 +274,24 @@ def draw(reward_map, Q):
     im = plt.imshow(image_map)
     plt.show()
     f.savefig('image_best_strategy.svg')
+
+def dynamic_value_iteration(reward_map, V, Vpom, init_state, gamma, delta, Q):
+    num_of_rows, num_of_columns = reward_map.shape
+    max_reward = -1000
+    for action in range(1, 5):
+        state_next, reward = environment(init_state, action, reward_map)
+        up_value = V[init_state[0] - 1][init_state[1]] if (init_state[0] - 1) >= 0 else WALL_COLLID_REWARD
+        down_value = V[init_state[0] + 1][init_state[1]] if (init_state[0] + 1) < num_of_rows else WALL_COLLID_REWARD
+        right_value = V[init_state[0]][init_state[1] + 1] if (init_state[1] + 1) < num_of_columns else WALL_COLLID_REWARD
+        left_value = V[init_state[0]][init_state[1] - 1] if (init_state[1] - 1) >= 0 else WALL_COLLID_REWARD
+        reward += (gamma * APPROPRIATE_MOVE_PROBABILITY * (up_value + down_value + right_value + left_value))
+        Q[init_state[0]][init_state[1]][action - 1] = reward
+        if reward > max_reward:
+            max_reward = reward
+
+    V[init_state[0]][init_state[1]] = max_reward
+    delta = max(delta, abs(V[init_state[0]][init_state[1]] - Vpom[init_state[0]][init_state[1]]))
+    return V, delta, Q
 
 
    
