@@ -9,7 +9,6 @@ import matplotlib.cm as cm
 import math
 
 WALL_COLLID_REWARD = -0.1
-APPROPRIATE_MOVE_PROBABILITY = 0.4
 
 def load_data(file_name):
     file_ptr = open(file_name, 'r').read()
@@ -275,17 +274,75 @@ def draw(reward_map, Q):
     plt.show()
     f.savefig('image_best_strategy.svg')
 
+def get_move_probability(action, direction):
+    if action == 1:
+        if direction == 1:
+            return 0.4
+        elif direction == 2:
+            return 0.2
+        elif direction == 3:
+            return 0.04
+        else:
+            return 0.36
+    elif action == 2:
+        if direction == 1:
+            return 0.2
+        elif direction == 2:
+            return 0.4
+        elif direction == 3:
+            return 0.36
+        else:
+            return 0.04
+    elif action == 3:
+        if direction == 1:
+            return 0.04
+        elif direction == 2:
+            return 0.2
+        elif direction == 3:
+            return 0.4
+        else:
+            return 0.36
+    elif action == 4:
+        if direction == 1:
+            return 0.2
+        elif direction == 2:
+            return 0.04
+        elif direction == 3:
+            return 0.36
+        else:
+            return 0.4
+
+def get_reward(init_state, action, reward_map):
+    num_of_rows, num_of_columns = reward_map.shape
+    if action == 1:
+        return reward_map[init_state[0]][init_state[1] + 1] if (init_state[1] + 1) < num_of_columns else WALL_COLLID_REWARD
+    elif action == 2:
+        return reward_map[init_state[0] - 1][init_state[1]] if (init_state[0] - 1) >= 0 else WALL_COLLID_REWARD
+    elif action == 3:
+        return reward_map[init_state[0]][init_state[1] - 1] if (init_state[1] - 1) >= 0 else WALL_COLLID_REWARD
+    elif action == 4:
+        return reward_map[init_state[0] + 1][init_state[1]] if (init_state[0] + 1) < num_of_rows else WALL_COLLID_REWARD
+
 def dynamic_value_iteration(reward_map, V, Vpom, init_state, gamma, delta, Q):
     num_of_rows, num_of_columns = reward_map.shape
     max_reward = -1000
     for action in range(1, 5):
-        state_next, reward = environment(init_state, action, reward_map)
-        up_value = V[init_state[0] - 1][init_state[1]] if (init_state[0] - 1) >= 0 else WALL_COLLID_REWARD
-        down_value = V[init_state[0] + 1][init_state[1]] if (init_state[0] + 1) < num_of_rows else WALL_COLLID_REWARD
+        # r(s,a)
+        reward = get_reward(init_state, action, reward_map)
+        # Vpom(s')
         right_value = V[init_state[0]][init_state[1] + 1] if (init_state[1] + 1) < num_of_columns else WALL_COLLID_REWARD
+        up_value = V[init_state[0] - 1][init_state[1]] if (init_state[0] - 1) >= 0 else WALL_COLLID_REWARD
         left_value = V[init_state[0]][init_state[1] - 1] if (init_state[1] - 1) >= 0 else WALL_COLLID_REWARD
-        reward += (gamma * APPROPRIATE_MOVE_PROBABILITY * (up_value + down_value + right_value + left_value))
+        down_value = V[init_state[0] + 1][init_state[1]] if (init_state[0] + 1) < num_of_rows else WALL_COLLID_REWARD
+        # sum(p(s'|s, a) * Vpom(s')
+        right_probability = get_move_probability(action, 1)
+        up_probability = get_move_probability(action, 2)
+        left_probability = get_move_probability(action, 3)
+        down_probability = get_move_probability(action, 4)
+        # V(s)
+        reward += (gamma * ((right_value * right_probability) + (up_value * up_probability) + (left_value * left_probability) + (down_value * down_probability)))
         Q[init_state[0]][init_state[1]][action - 1] = reward
+
         if reward > max_reward:
             max_reward = reward
 

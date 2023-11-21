@@ -5,15 +5,15 @@ import numpy as np
 import matplotlib.pyplot as plt
 import sailor_funct as sf
 
-number_of_episodes = 100                # number of training epizodes (multi-stage processes)
+number_of_episodes = 1000                # number of training epizodes (multi-stage processes)
 gamma = 0.95                           # discount factor
 num_of_actions = 4
 
-file_name = 'map_small.txt'
+# file_name = 'map_small.txt'
 # file_name = 'map_easy.txt'
-#file_name = 'map_middle.txt'
+# file_name = 'map_middle.txt'
 #file_name = 'map_big.txt'
-# file_name = 'map_spiral.txt'
+file_name = 'map_spiral.txt'
 
 reward_map = sf.load_data(file_name)
 num_of_rows, num_of_columns = reward_map.shape
@@ -57,15 +57,17 @@ sum_of_rewards = np.zeros([number_of_episodes], dtype=float)
 # # DYNAMICZNA ITERACJA WARTOŚCI
 V = np.zeros([num_of_rows, num_of_columns], dtype=float)
 delta = 1000
-while delta >= 0.00001:
+while delta >= 4:
     Vpom = np.copy(V)
     delta = 0
     for row in range(num_of_rows):
-        for col in range(num_of_columns):
+        for col in range(num_of_columns - 1):
             V, delta, Q = sf.dynamic_value_iteration(reward_map, V, Vpom, [row, col], gamma, delta, Q)
 
     sf.sailor_test(reward_map, Q, number_of_episodes)
     sf.draw(reward_map, Q)
+    for raw in V:
+        print(raw)
 
 sf.sailor_test(reward_map, Q, number_of_episodes)
 sf.draw(reward_map, Q)
