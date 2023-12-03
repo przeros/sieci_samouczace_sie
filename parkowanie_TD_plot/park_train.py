@@ -1,6 +1,7 @@
 import numpy as np
 import parking_model as pm
 from functools import reduce
+import matplotlib.pyplot as plt
 
 class State:
     def __init__(self, state_vector: list):
@@ -9,24 +10,22 @@ class State:
         self.car_angle = state_vector[2]
 
 class HiperParameters(object):
-   def __init__(self, grid_width, grid_height, grid_offsets: [(float, float)], num_of_car_angle_values, num_of_wheel_angle_values, velocities):
-       self.grid_width = grid_width
-       self.grid_height = grid_height
-       self.grid_offsets = grid_offsets
+   def __init__(self, num_of_car_angle_values, num_of_wheel_angle_values, velocities, num_of_prototypes, r):
        self.num_of_car_angle_values = num_of_car_angle_values
        self.grid_num_of_wheel_angle_values = num_of_wheel_angle_values
        self.velocities = velocities
+       self.num_of_prototypes = num_of_prototypes
+       self.r = r
 
-class CoverageEncoder(object):
+class PrototypeEncoder(object):
     def __init__(self, global_variables: pm.GlobalVar, hiper_parameters: HiperParameters):
         self.global_variables = global_variables
         self.hiper_parameters = hiper_parameters
-        self.field_width = global_variables.street_length / hiper_parameters.grid_width
-        self.field_height = global_variables.street_width / hiper_parameters.grid_height
         self.delta_car_angle = 2.0 * np.pi / hiper_parameters.num_of_car_angle_values
         self.car_angles = np.arange(-np.pi, np.pi, self.delta_car_angle)
         self.delta_wheel_angle = 2.0 * global_variables.wheel_turn_angle_max / hiper_parameters.grid_num_of_wheel_angle_values
         self.wheel_angles = np.arange(-global_variables.wheel_turn_angle_max, global_variables.wheel_turn_angle_max, self.delta_wheel_angle)
+        self.prototypes = self.generate_prototypes()
         print('car_angles =', self.car_angles)
         print('wheel_angles =', self.wheel_angles)
 
@@ -35,10 +34,7 @@ class CoverageEncoder(object):
 
     def get_weights_shape(self) -> [int]:
         return [
-            len(self.hiper_parameters.grid_offsets),
-            self.hiper_parameters.grid_width,
-            self.hiper_parameters.grid_height,
-            self.hiper_parameters.num_of_car_angle_values,
+            self.hiper_parameters.num_of_prototypes,
             len(self.get_actions())
         ]
 
@@ -47,33 +43,23 @@ class CoverageEncoder(object):
         velocity_actions = np.repeat(self.hiper_parameters.velocities, len(self.wheel_angles))
         return np.column_stack((wheel_turn_actions, velocity_actions))
 
+    def generate_prototypes(self):
+        prototypes = np.random.rand(self.hiper_parameters.num_of_prototypes, 3)
+        prototypes[:, 0] *= self.global_variables.street_length
+        prototypes[:, 1] *= self.global_variables.street_width
+        prototypes[:, 2] = np.random.uniform(-np.pi, np.pi, self.hiper_parameters.num_of_prototypes)
+        return prototypes
+
     def get_state_projections(self, state: State):
-        x = state.x
-        y = state.y
-        angle = state.car_angle
-        projections = []
-
-        for x_offset, y_offset in self.hiper_parameters.grid_offsets:
-            # Calculate projections
-            x_proj = np.floor((x - x_offset) / self.field_width)
-            y_proj = np.floor((y - y_offset) / self.field_width)
-            angle_proj = np.floor((angle + np.pi) / self.delta_car_angle)
-
-            # Clip projections to valid ranges
-            x_proj = np.clip(x_proj, 0, self.hiper_parameters.grid_width - 1)
-            y_proj = np.clip(y_proj, 0, self.hiper_parameters.grid_height - 1)
-            alpha_proj = np.clip(angle_proj, 0, self.hiper_parameters.num_of_car_angle_values - 1)
-
-            # Append the clipped projections to the result
-            projections.append((x_proj, y_proj, angle_proj))
-
-        return projections
+        distances = np.linalg.norm(self.prototypes - (state.x, state.y, state.car_angle), axis=1)
+        close_indices = np.where(distances <= self.hiper_parameters.r)[0]
+        return close_indices
 
     def encode_state(self, state: State, action):
         coded_state = np.zeros(shape=self.get_weights_shape())
         projections = self.get_state_projections(state)
-        for i, (x_cell_no, y_cell_no, angle_no) in enumerate(projections):
-            coded_state[i, int(x_cell_no), int(y_cell_no), int(angle_no), action] = 1.0
+        for projection in projections:
+            coded_state[projection, action] = 1.0
         return coded_state.reshape(-1)
 
 class StateStagnationHandler(object):
@@ -81,7 +67,8 @@ class StateStagnationHandler(object):
     def __init__(self, global_variables):
         self.closest_distance = None
         self.smallest_angle = None
-        self.max_distance_squared = (global_variables.street_width * global_variables.street_width) + (global_variables.street_length * global_variables.street_length)
+        self.max_distance_squared = (global_variables.street_width * global_variables.street_width) \
+                                    + (global_variables.street_length * global_variables.street_length)
 
     def get_reward_relative_to_closest_distance_achieved(self, state: State):
         if self.closest_distance is None:
@@ -104,7 +91,7 @@ class StateStagnationHandler(object):
 class Linear_Approximator(object):
     encoder = None
     weights = None
-    def __init__(self, weights, encoder: CoverageEncoder):
+    def __init__(self, weights, encoder: PrototypeEncoder):
         self.weights = weights
         self.encoder = encoder
 
@@ -118,47 +105,51 @@ def get_distance_from_parking(state: State) -> float:
 def exploration(epsylon):
     return np.random.random() < epsylon
 
-def final_angle_reward(angle):
-    max_reward = 50
-    # Ensure that the angle is between 0 and 2*pi
-    angle = angle % (2 * np.pi)
-    # Calculate the distance from the closest angle (0 or pi)
-    angle_distance = min(abs(angle - 0), abs(angle - np.pi))
+def get_final_score(physical_parameters, state: (float, float, float)) -> float:
+    if (-physical_parameters.place_width / 2.0 < state.x < physical_parameters.place_width / 2.0
+            and -physical_parameters.park_depth / 2.0 < state.y < physical_parameters.park_depth / 2.0):
+        return 100.0
+    return 0.0
 
-    # Map the distance to a value between 0 and 100 (closer to 0 or pi results in higher values)
-    scaled_value = max_reward - (((2 * angle_distance) / np.pi) * max_reward)
-
-    # Ensure the result is between 0 and 100
-    return max(0, min(100, scaled_value))
-
-def final_reward(global_variables, state):
-    if is_in_parking_place(global_variables, state):
-        return 100.0 + final_angle_reward(state.car_angle)
-    else:
-        return 0.0
-
-def is_in_parking_place(global_variables, state: State):
-    return (-global_variables.place_width / 2.0 < state.x < global_variables.place_width / 2.0
-     and -global_variables.park_depth / 2.0 < state.y < global_variables.park_depth / 2)
-
-def get_reward(global_variables, state, is_collision, quit, state_stagnation_handler: StateStagnationHandler):
+def get_reward(physical_parameters, state, is_collision, is_stopped, recorder):
+    value = 0
     x = state.x
     y = state.y
-    collision_reward = 0
+    alpha = state.car_angle
+    xy_distance_squared = x * x + y * y
 
-    # distance_reward
-    distance_reward = 0.1 * ((1 / get_distance_from_parking(state) + 0.5) - 1)
-    best_distance_reward = 5 * state_stagnation_handler.get_reward_relative_to_closest_distance_achieved(state)
-    #best_angle_reward = -2 * state_stagnation_handler.get_reward_relative_to_smallest_angle_achieved(state) if is_in_parking_place(global_variables, state) else 0
-    angle_reward = ((np.pi / 2) - min(abs(state.car_angle), abs(np.pi - state.car_angle))) * (1 / get_distance_from_parking(state))
-    parking_place_reward = 5 if is_in_parking_place(global_variables, state) else 0
+    alpha_reduced = 0
+    if physical_parameters.if_side_parking_place:
+        if np.abs(alpha) > np.pi / 2:
+            alpha_reduced = np.pi - np.abs(alpha)
+        else:
+            alpha_reduced = np.abs(alpha)
+    else:
+        alpha_reduced = np.abs(np.abs(alpha) - np.pi / 2)
+
+    alpha_reduced = alpha_reduced / (xy_distance_squared + 0.5)
+
+    # distance_reward = 1 / (xy_distance_squared + 0.5) - 1
+    distance_reward = recorder.get_reward_relative_to_closest_distance_achieved(state)
+    if distance_reward > 0.0:
+        distance_reward *= (
+                (physical_parameters.max_number_of_steps) / (
+                    physical_parameters.max_number_of_steps + 1)
+        ) * 3.0
+        if recorder.closest_distance is not None and recorder.closest_distance < 5.0:
+            distance_reward *= 2.0
+        if recorder.closest_distance is not None and recorder.closest_distance < 2.5:
+            distance_reward *= 4.0
+    alpha_reward = alpha_reduced - 0.5
+
+    # jeśli V==0 nagroda na podstawie odległości
 
     if is_collision:
-        collision_reward = -50
-    if quit:
-        value = final_reward(global_variables, state) + best_distance_reward + parking_place_reward + angle_reward + distance_reward
+        value = -10.0
+    elif is_stopped:
+        value = distance_reward + (4 * alpha_reward) + get_final_score(physical_parameters, state)
     else:
-        value = best_distance_reward + collision_reward + parking_place_reward + angle_reward + + distance_reward
+        value = distance_reward
 
     return value
 
@@ -216,6 +207,7 @@ def park_test(param_fiz, stanp, aproks):
     print("srednia suma nagrod w epizodzie = %g" % (sr_suma_nagrod))
     print("srednia liczba krokow = %g" % (liczba_krokow/liczba_stanow_poczatkowych))
     phist.close()
+    return sr_suma_nagrod
 
 def get_best_rating_of_state_actions(encoder, new_state, weights):
     best_rating = max(
@@ -224,20 +216,24 @@ def get_best_rating_of_state_actions(encoder, new_state, weights):
     )
     return best_rating
 
-def update_weights_Q_learning(encoder, state, action, weights, alpha, gamma, reward, new_state):
+def update_weights_Q_learning(encoder, state, new_state, action, action_prim, weights, alpha, gamma, reward, lambda_coeff, z):
     coded_state = encoder.encode_state(state, action)
-    weights += np.multiply(alpha * (reward + gamma * get_best_rating_of_state_actions(encoder, new_state, weights)
-            - Linear_Approximator.approximate(weights, coded_state)), coded_state)
-    return weights
+    coded_state_prim = encoder.encode_state(new_state, action_prim)
+    z = (gamma * lambda_coeff * z) + coded_state
+    delta = reward + (gamma * Linear_Approximator.approximate(weights, coded_state_prim)) - Linear_Approximator.approximate(weights, coded_state)
+    weights += (alpha * delta * z)
+    return z, weights
 
 def car_parked(state: State):
-    return (np.degrees(state.car_angle) <= 15 and get_distance_from_parking(state) <= 0.5)
+    return (np.degrees(state.car_angle) <= 1 and get_distance_from_parking(state) <= 0.1)
 
-def park_train():
-    num_of_epochs = 2001
+
+
+def park_train(lambda_coeff):
+    num_of_epochs = 1001
     alpha = 0.1  # wsp.szybkosci uczenia(moze byc funkcja czasu)
-    epsylon = 1 # wsp.eksploracji(moze byc funkcja czasu)
-    epsylon_decay_ratio = 0.0005
+    epsylon = 0 # wsp.eksploracji(moze byc funkcja czasu)
+    epsylon_decay_ratio = 0
     gamma = 0.95
 
     #init_states = np.array([[9.1, 4.6, 0],[6.3, 5.06, 0],[9.6, 3.15, 0],[7.3, 5.75, 0],[10.1, 6.21, 0]],dtype=float)
@@ -251,14 +247,14 @@ def park_train():
     # ........................................................
 
     hiperparameters = HiperParameters(
-        grid_width=10,
-        grid_height=5,
-        grid_offsets=[(0.0, 0.0), (0.5, 0.5), (-0.5, -0.5)],
         num_of_car_angle_values=9,
         num_of_wheel_angle_values=9,
-        velocities=(-global_variables.Vmod, global_variables.Vmod))
+        velocities=(-global_variables.Vmod, global_variables.Vmod),
+        num_of_prototypes=2000,
+        r=1.0
+    )
 
-    encoder = CoverageEncoder(global_variables=global_variables, hiper_parameters=hiperparameters)
+    encoder = PrototypeEncoder(global_variables=global_variables, hiper_parameters=hiperparameters)
 
     num_of_weights = encoder.count_weights()
     print(f'weights_num = {num_of_weights}')
@@ -271,7 +267,8 @@ def park_train():
         state_stagnation_handler = StateStagnationHandler(global_variables=pm.GlobalVar)
         epsylon -= epsylon_decay_ratio
 
-        # Wybieramy stan poczatkowy:
+        # Inicjujemy wektor z i wybieramy stan poczatkowy:
+        z = np.zeros(num_of_weights)
         initial_state_number = epoch % num_of_initial_states
         state = State(init_states[initial_state_number, :])
 
@@ -304,24 +301,41 @@ def park_train():
 
             reward = get_reward(global_variables, new_state, is_collision, quit, state_stagnation_handler)
 
+            # wyznaczamy akcje A' w nowym stanie S'
+            action_ratings = [
+                Linear_Approximator.approximate(weights, encoder.encode_state(new_state, i))
+                for i in range(len(actions))
+            ]
+            action_prim = np.argmax(action_ratings)
+
             # Aktualizujemy wartosci Q dla aktualnego stanu i wybranej akcji:
             # ........................................................
             # ........................................................
             # w = w + ...
-            weights = update_weights_Q_learning(encoder, state, selected_action, weights, alpha, gamma, reward, new_state)
+            z, weights = update_weights_Q_learning(encoder, state, new_state, selected_action, action_prim, weights, alpha, gamma, reward, lambda_coeff, z)
             state = new_state
 
         # co jakis czas test z wygenerowaniem historii do pliku:
         if epoch % 50 == 0:
             print("epoch %d\n" % epoch)
-            park_test(global_variables, init_states, Linear_Approximator(weights, encoder))
+            sr_suma_nagrod = park_test(global_variables, init_states, Linear_Approximator(weights, encoder))
 
         if car_parked(state):
-            park_test(global_variables, init_states, Linear_Approximator(weights, encoder))
+            sr_suma_nagrod = park_test(global_variables, init_states, Linear_Approximator(weights, encoder))
             print("Car has successfully parked!\n")
             break
+    return sr_suma_nagrod
 
+lambda_values = np.arange(0, 1.1, 0.1)
+tab = []
+for lambda_val in lambda_values:
+    tab.append(park_train(lambda_val))
 
-park_train()
-
+plt.xlim()
+plt.plot(lambda_values, tab)
+plt.xlabel('Lambda Values')
+plt.ylabel('Mean Sum of Rewards')
+plt.title('Graph of Mean Sum of Rewards depending on Lambda Values')
+plt.xticks(np.arange(0, 1.1, step=0.1))
+plt.show()
 
