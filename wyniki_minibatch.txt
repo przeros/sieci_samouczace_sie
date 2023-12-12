@@ -1,0 +1,56 @@
+epoch 0
+
+w 1 epizodzie suma nagrod = -10, liczba krokow = 2
+w 2 epizodzie suma nagrod = -10.8152, liczba krokow = 5
+w 3 epizodzie suma nagrod = -12.0656, liczba krokow = 7
+w 4 epizodzie suma nagrod = -12.1322, liczba krokow = 7
+srednia suma nagrod w epizodzigrue = -11.2533
+srednia liczba krokow = 5.25
+episodes:   2%|▏         | 5/301 [01:13<2:07:29, 25.84s/it]epoch 5
+
+w 1 epizodzie suma nagrod = 40.7693, liczba krokow = 64
+w 2 epizodzie suma nagrod = 132.171, liczba krokow = 100
+w 3 epizodzie suma nagrod = 38.8293, liczba krokow = 57
+w 4 epizodzie suma nagrod = 23.0942, liczba krokow = 100
+srednia suma nagrod w epizodzigrue = 58.716
+srednia liczba krokow = 80.25
+episodes:   3%|▎         | 10/301 [08:51<7:12:16, 89.13s/it]epoch 10
+
+w 1 epizodzie suma nagrod = 156.779, liczba krokow = 100
+w 2 epizodzie suma nagrod = 156.681, liczba krokow = 100
+w 3 epizodzie suma nagrod = 158.472, liczba krokow = 100
+episodes:   4%|▎         | 11/301 [11:08<8:22:34, 103.98s/it]w 4 epizodzie suma nagrod = 159.797, liczba krokow = 100
+srednia suma nagrod w epizodzigrue = 157.932
+srednia liczba krokow = 100
+episodes:   5%|▍         | 15/301 [19:00<9:05:04, 114.35s/it]epoch 15
+
+w 1 epizodzie suma nagrod = 158.942, liczba krokow = 100
+w 2 epizodzie suma nagrod = 158.409, liczba krokow = 100
+w 3 epizodzie suma nagrod = 159.107, liczba krokow = 100
+episodes:   5%|▌         | 16/301 [21:12<9:28:19, 119.65s/it]w 4 epizodzie suma nagrod = 159.496, liczba krokow = 100
+srednia suma nagrod w epizodzigrue = 158.988
+srednia liczba krokow = 100
+episodes:   7%|▋         | 20/301 [28:07<7:56:58, 101.85s/it]epoch 20
+
+w 1 epizodzie suma nagrod = 40.165, liczba krokow = 64
+w 2 epizodzie suma nagrod = 37.922, liczba krokow = 61
+w 3 epizodzie suma nagrod = 38.6627, liczba krokow = 58
+episodes:   7%|▋         | 21/301 [29:35<7:35:56, 97.70s/it] w 4 epizodzie suma nagrod = 37.8971, liczba krokow = 54
+srednia suma nagrod w epizodzigrue = 38.6617
+srednia liczba krokow = 59.25
+episodes:   8%|▊         | 25/301 [34:26<6:03:29, 79.02s/it]epoch 25
+
+w 1 epizodzie suma nagrod = 40.165, liczba krokow = 64
+w 2 epizodzie suma nagrod = 37.922, liczba krokow = 61
+w 3 epizodzie suma nagrod = 38.6627, liczba krokow = 58
+episodes:   9%|▊         | 26/301 [35:52<6:10:48, 80.90s/it]w 4 epizodzie suma nagrod = 37.8971, liczba krokow = 54
+srednia suma nagrod w epizodzigrue = 38.6617
+srednia liczba krokow = 59.25
+episodes:  10%|▉         | 30/301 [40:40<5:37:43, 74.77s/it]epoch 30
+
+w 1 epizodzie suma nagrod = 40.165, liczba krokow = 64
+w 2 epizodzie suma nagrod = 37.922, liczba krokow = 61
+w 3 epizodzie suma nagrod = 38.6627, liczba krokow = 58
+episodes:  10%|█         | 31/301 [42:02<5:45:46, 76.84s/it]w 4 epizodzie suma nagrod = 37.8971, liczba krokow = 54
+srednia suma nagrod w epizodzigrue = 38.6617
+srednia liczba krokow = 59.25
