@@ -1,0 +1,501 @@
+game 0 x win:
+___  x__  xo_  xox  xox  xox  xox  xox  
+___  ___  ___  ___  o__  ox_  oxo  oxo  
+___  ___  ___  ___  ___  ___  ___  x__  
+
+game 1 x win:
+___  x__  xo_  xox  xox  xox  xox  xox  
+___  ___  ___  ___  o__  ox_  oxo  oxo  
+___  ___  ___  ___  ___  ___  ___  x__  
+
+game 2 x win:
+___  x__  xo_  xox  xox  xox  xox  xox  
+___  ___  ___  ___  o__  ox_  oxo  oxo  
+___  ___  ___  ___  ___  ___  ___  x__  
+
+game 3 x win:
+___  x__  xo_  xox  xox  xox  xox  xox  
+___  ___  ___  ___  o__  ox_  oxo  oxo  
+___  ___  ___  ___  ___  ___  ___  x__  
+
+game 4 x win:
+___  x__  xo_  xox  xox  xox  xox  xox  
+___  ___  ___  ___  o__  ox_  oxo  oxo  
+___  ___  ___  ___  ___  ___  ___  x__  
+
+game 5 x win:
+___  x__  xo_  xox  xox  xox  xox  xox  
+___  ___  ___  ___  o__  ox_  oxo  oxo  
+___  ___  ___  ___  ___  ___  ___  x__  
+
+game 6 x win:
+___  x__  xo_  xox  xox  xox  xox  xox  
+___  ___  ___  ___  o__  ox_  oxo  oxo  
+___  ___  ___  ___  ___  ___  ___  x__  
+
+game 7 x win:
+___  x__  xo_  xox  xox  xox  xox  xox  
+___  ___  ___  ___  o__  ox_  oxo  oxo  
+___  ___  ___  ___  ___  ___  ___  x__  
+
+game 8 x win:
+___  x__  xo_  xox  xox  xox  xox  xox  
+___  ___  ___  ___  o__  ox_  oxo  oxo  
+___  ___  ___  ___  ___  ___  ___  x__  
+
+game 9 x win:
+___  x__  xo_  xox  xox  xox  xox  xox  
+___  ___  ___  ___  o__  ox_  oxo  oxo  
+___  ___  ___  ___  ___  ___  ___  x__  
+
+game 10 x win:
+___  x__  xo_  xox  xox  xox  xox  xox  
+___  ___  ___  ___  o__  ox_  oxo  oxo  
+___  ___  ___  ___  ___  ___  ___  x__  
+
+game 11 x win:
+___  x__  xo_  xox  xox  xox  xox  xox  
+___  ___  ___  ___  o__  ox_  oxo  oxo  
+___  ___  ___  ___  ___  ___  ___  x__  
+
+game 12 x win:
+___  x__  xo_  xox  xox  xox  xox  xox  
+___  ___  ___  ___  o__  ox_  oxo  oxo  
+___  ___  ___  ___  ___  ___  ___  x__  
+
+game 13 x win:
+___  x__  xo_  xox  xox  xox  xox  xox  
+___  ___  ___  ___  o__  ox_  oxo  oxo  
+___  ___  ___  ___  ___  ___  ___  x__  
+
+game 14 x win:
+___  x__  xo_  xox  xox  xox  xox  xox  
+___  ___  ___  ___  o__  ox_  oxo  oxo  
+___  ___  ___  ___  ___  ___  ___  x__  
+
+game 15 x win:
+___  x__  xo_  xox  xox  xox  xox  xox  
+___  ___  ___  ___  o__  ox_  oxo  oxo  
+___  ___  ___  ___  ___  ___  ___  x__  
+
+game 16 x win:
+___  x__  xo_  xox  xox  xox  xox  xox  
+___  ___  ___  ___  o__  ox_  oxo  oxo  
+___  ___  ___  ___  ___  ___  ___  x__  
+
+game 17 x win:
+___  x__  xo_  xox  xox  xox  xox  xox  
+___  ___  ___  ___  o__  ox_  oxo  oxo  
+___  ___  ___  ___  ___  ___  ___  x__  
+
+game 18 x win:
+___  x__  xo_  xox  xox  xox  xox  xox  
+___  ___  ___  ___  o__  ox_  oxo  oxo  
+___  ___  ___  ___  ___  ___  ___  x__  
+
+game 19 x win:
+___  x__  xo_  xox  xox  xox  xox  xox  
+___  ___  ___  ___  o__  ox_  oxo  oxo  
+___  ___  ___  ___  ___  ___  ___  x__  
+
+game 20 x win:
+___  x__  xo_  xox  xox  xox  xox  xox  
+___  ___  ___  ___  o__  ox_  oxo  oxo  
+___  ___  ___  ___  ___  ___  ___  x__  
+
+game 21 x win:
+___  x__  xo_  xox  xox  xox  xox  xox  
+___  ___  ___  ___  o__  ox_  oxo  oxo  
+___  ___  ___  ___  ___  ___  ___  x__  
+
+game 22 x win:
+___  x__  xo_  xox  xox  xox  xox  xox  
+___  ___  ___  ___  o__  ox_  oxo  oxo  
+___  ___  ___  ___  ___  ___  ___  x__  
+
+game 23 x win:
+___  x__  xo_  xox  xox  xox  xox  xox  
+___  ___  ___  ___  o__  ox_  oxo  oxo  
+___  ___  ___  ___  ___  ___  ___  x__  
+
+game 24 x win:
+___  x__  xo_  xox  xox  xox  xox  xox  
+___  ___  ___  ___  o__  ox_  oxo  oxo  
+___  ___  ___  ___  ___  ___  ___  x__  
+
+game 25 x win:
+___  x__  xo_  xox  xox  xox  xox  xox  
+___  ___  ___  ___  o__  ox_  oxo  oxo  
+___  ___  ___  ___  ___  ___  ___  x__  
+
+game 26 x win:
+___  x__  xo_  xox  xox  xox  xox  xox  
+___  ___  ___  ___  o__  ox_  oxo  oxo  
+___  ___  ___  ___  ___  ___  ___  x__  
+
+game 27 x win:
+___  x__  xo_  xox  xox  xox  xox  xox  
+___  ___  ___  ___  o__  ox_  oxo  oxo  
+___  ___  ___  ___  ___  ___  ___  x__  
+
+game 28 x win:
+___  x__  xo_  xox  xox  xox  xox  xox  
+___  ___  ___  ___  o__  ox_  oxo  oxo  
+___  ___  ___  ___  ___  ___  ___  x__  
+
+game 29 x win:
+___  x__  xo_  xox  xox  xox  xox  xox  
+___  ___  ___  ___  o__  ox_  oxo  oxo  
+___  ___  ___  ___  ___  ___  ___  x__  
+
+game 30 x win:
+___  x__  xo_  xox  xox  xox  xox  xox  
+___  ___  ___  ___  o__  ox_  oxo  oxo  
+___  ___  ___  ___  ___  ___  ___  x__  
+
+game 31 x win:
+___  x__  xo_  xox  xox  xox  xox  xox  
+___  ___  ___  ___  o__  ox_  oxo  oxo  
+___  ___  ___  ___  ___  ___  ___  x__  
+
+game 32 x win:
+___  x__  xo_  xox  xox  xox  xox  xox  
+___  ___  ___  ___  o__  ox_  oxo  oxo  
+___  ___  ___  ___  ___  ___  ___  x__  
+
+game 33 x win:
+___  x__  xo_  xox  xox  xox  xox  xox  
+___  ___  ___  ___  o__  ox_  oxo  oxo  
+___  ___  ___  ___  ___  ___  ___  x__  
+
+game 34 x win:
+___  x__  xo_  xox  xox  xox  xox  xox  
+___  ___  ___  ___  o__  ox_  oxo  oxo  
+___  ___  ___  ___  ___  ___  ___  x__  
+
+game 35 x win:
+___  x__  xo_  xox  xox  xox  xox  xox  
+___  ___  ___  ___  o__  ox_  oxo  oxo  
+___  ___  ___  ___  ___  ___  ___  x__  
+
+game 36 x win:
+___  x__  xo_  xox  xox  xox  xox  xox  
+___  ___  ___  ___  o__  ox_  oxo  oxo  
+___  ___  ___  ___  ___  ___  ___  x__  
+
+game 37 x win:
+___  x__  xo_  xox  xox  xox  xox  xox  
+___  ___  ___  ___  o__  ox_  oxo  oxo  
+___  ___  ___  ___  ___  ___  ___  x__  
+
+game 38 x win:
+___  x__  xo_  xox  xox  xox  xox  xox  
+___  ___  ___  ___  o__  ox_  oxo  oxo  
+___  ___  ___  ___  ___  ___  ___  x__  
+
+game 39 x win:
+___  x__  xo_  xox  xox  xox  xox  xox  
+___  ___  ___  ___  o__  ox_  oxo  oxo  
+___  ___  ___  ___  ___  ___  ___  x__  
+
+game 40 x win:
+___  x__  xo_  xox  xox  xox  xox  xox  
+___  ___  ___  ___  o__  ox_  oxo  oxo  
+___  ___  ___  ___  ___  ___  ___  x__  
+
+game 41 x win:
+___  x__  xo_  xox  xox  xox  xox  xox  
+___  ___  ___  ___  o__  ox_  oxo  oxo  
+___  ___  ___  ___  ___  ___  ___  x__  
+
+game 42 x win:
+___  x__  xo_  xox  xox  xox  xox  xox  
+___  ___  ___  ___  o__  ox_  oxo  oxo  
+___  ___  ___  ___  ___  ___  ___  x__  
+
+game 43 x win:
+___  x__  xo_  xox  xox  xox  xox  xox  
+___  ___  ___  ___  o__  ox_  oxo  oxo  
+___  ___  ___  ___  ___  ___  ___  x__  
+
+game 44 x win:
+___  x__  xo_  xox  xox  xox  xox  xox  
+___  ___  ___  ___  o__  ox_  oxo  oxo  
+___  ___  ___  ___  ___  ___  ___  x__  
+
+game 45 x win:
+___  x__  xo_  xox  xox  xox  xox  xox  
+___  ___  ___  ___  o__  ox_  oxo  oxo  
+___  ___  ___  ___  ___  ___  ___  x__  
+
+game 46 x win:
+___  x__  xo_  xox  xox  xox  xox  xox  
+___  ___  ___  ___  o__  ox_  oxo  oxo  
+___  ___  ___  ___  ___  ___  ___  x__  
+
+game 47 x win:
+___  x__  xo_  xox  xox  xox  xox  xox  
+___  ___  ___  ___  o__  ox_  oxo  oxo  
+___  ___  ___  ___  ___  ___  ___  x__  
+
+game 48 x win:
+___  x__  xo_  xox  xox  xox  xox  xox  
+___  ___  ___  ___  o__  ox_  oxo  oxo  
+___  ___  ___  ___  ___  ___  ___  x__  
+
+game 49 x win:
+___  x__  xo_  xox  xox  xox  xox  xox  
+___  ___  ___  ___  o__  ox_  oxo  oxo  
+___  ___  ___  ___  ___  ___  ___  x__  
+
+game 50 x win:
+___  x__  xo_  xox  xox  xox  xox  xox  
+___  ___  ___  ___  o__  ox_  oxo  oxo  
+___  ___  ___  ___  ___  ___  ___  x__  
+
+game 51 x win:
+___  x__  xo_  xox  xox  xox  xox  xox  
+___  ___  ___  ___  o__  ox_  oxo  oxo  
+___  ___  ___  ___  ___  ___  ___  x__  
+
+game 52 x win:
+___  x__  xo_  xox  xox  xox  xox  xox  
+___  ___  ___  ___  o__  ox_  oxo  oxo  
+___  ___  ___  ___  ___  ___  ___  x__  
+
+game 53 x win:
+___  x__  xo_  xox  xox  xox  xox  xox  
+___  ___  ___  ___  o__  ox_  oxo  oxo  
+___  ___  ___  ___  ___  ___  ___  x__  
+
+game 54 x win:
+___  x__  xo_  xox  xox  xox  xox  xox  
+___  ___  ___  ___  o__  ox_  oxo  oxo  
+___  ___  ___  ___  ___  ___  ___  x__  
+
+game 55 x win:
+___  x__  xo_  xox  xox  xox  xox  xox  
+___  ___  ___  ___  o__  ox_  oxo  oxo  
+___  ___  ___  ___  ___  ___  ___  x__  
+
+game 56 x win:
+___  x__  xo_  xox  xox  xox  xox  xox  
+___  ___  ___  ___  o__  ox_  oxo  oxo  
+___  ___  ___  ___  ___  ___  ___  x__  
+
+game 57 x win:
+___  x__  xo_  xox  xox  xox  xox  xox  
+___  ___  ___  ___  o__  ox_  oxo  oxo  
+___  ___  ___  ___  ___  ___  ___  x__  
+
+game 58 x win:
+___  x__  xo_  xox  xox  xox  xox  xox  
+___  ___  ___  ___  o__  ox_  oxo  oxo  
+___  ___  ___  ___  ___  ___  ___  x__  
+
+game 59 x win:
+___  x__  xo_  xox  xox  xox  xox  xox  
+___  ___  ___  ___  o__  ox_  oxo  oxo  
+___  ___  ___  ___  ___  ___  ___  x__  
+
+game 60 x win:
+___  x__  xo_  xox  xox  xox  xox  xox  
+___  ___  ___  ___  o__  ox_  oxo  oxo  
+___  ___  ___  ___  ___  ___  ___  x__  
+
+game 61 x win:
+___  x__  xo_  xox  xox  xox  xox  xox  
+___  ___  ___  ___  o__  ox_  oxo  oxo  
+___  ___  ___  ___  ___  ___  ___  x__  
+
+game 62 x win:
+___  x__  xo_  xox  xox  xox  xox  xox  
+___  ___  ___  ___  o__  ox_  oxo  oxo  
+___  ___  ___  ___  ___  ___  ___  x__  
+
+game 63 x win:
+___  x__  xo_  xox  xox  xox  xox  xox  
+___  ___  ___  ___  o__  ox_  oxo  oxo  
+___  ___  ___  ___  ___  ___  ___  x__  
+
+game 64 x win:
+___  x__  xo_  xox  xox  xox  xox  xox  
+___  ___  ___  ___  o__  ox_  oxo  oxo  
+___  ___  ___  ___  ___  ___  ___  x__  
+
+game 65 x win:
+___  x__  xo_  xox  xox  xox  xox  xox  
+___  ___  ___  ___  o__  ox_  oxo  oxo  
+___  ___  ___  ___  ___  ___  ___  x__  
+
+game 66 x win:
+___  x__  xo_  xox  xox  xox  xox  xox  
+___  ___  ___  ___  o__  ox_  oxo  oxo  
+___  ___  ___  ___  ___  ___  ___  x__  
+
+game 67 x win:
+___  x__  xo_  xox  xox  xox  xox  xox  
+___  ___  ___  ___  o__  ox_  oxo  oxo  
+___  ___  ___  ___  ___  ___  ___  x__  
+
+game 68 x win:
+___  x__  xo_  xox  xox  xox  xox  xox  
+___  ___  ___  ___  o__  ox_  oxo  oxo  
+___  ___  ___  ___  ___  ___  ___  x__  
+
+game 69 x win:
+___  x__  xo_  xox  xox  xox  xox  xox  
+___  ___  ___  ___  o__  ox_  oxo  oxo  
+___  ___  ___  ___  ___  ___  ___  x__  
+
+game 70 x win:
+___  x__  xo_  xox  xox  xox  xox  xox  
+___  ___  ___  ___  o__  ox_  oxo  oxo  
+___  ___  ___  ___  ___  ___  ___  x__  
+
+game 71 x win:
+___  x__  xo_  xox  xox  xox  xox  xox  
+___  ___  ___  ___  o__  ox_  oxo  oxo  
+___  ___  ___  ___  ___  ___  ___  x__  
+
+game 72 x win:
+___  x__  xo_  xox  xox  xox  xox  xox  
+___  ___  ___  ___  o__  ox_  oxo  oxo  
+___  ___  ___  ___  ___  ___  ___  x__  
+
+game 73 x win:
+___  x__  xo_  xox  xox  xox  xox  xox  
+___  ___  ___  ___  o__  ox_  oxo  oxo  
+___  ___  ___  ___  ___  ___  ___  x__  
+
+game 74 x win:
+___  x__  xo_  xox  xox  xox  xox  xox  
+___  ___  ___  ___  o__  ox_  oxo  oxo  
+___  ___  ___  ___  ___  ___  ___  x__  
+
+game 75 x win:
+___  x__  xo_  xox  xox  xox  xox  xox  
+___  ___  ___  ___  o__  ox_  oxo  oxo  
+___  ___  ___  ___  ___  ___  ___  x__  
+
+game 76 x win:
+___  x__  xo_  xox  xox  xox  xox  xox  
+___  ___  ___  ___  o__  ox_  oxo  oxo  
+___  ___  ___  ___  ___  ___  ___  x__  
+
+game 77 x win:
+___  x__  xo_  xox  xox  xox  xox  xox  
+___  ___  ___  ___  o__  ox_  oxo  oxo  
+___  ___  ___  ___  ___  ___  ___  x__  
+
+game 78 x win:
+___  x__  xo_  xox  xox  xox  xox  xox  
+___  ___  ___  ___  o__  ox_  oxo  oxo  
+___  ___  ___  ___  ___  ___  ___  x__  
+
+game 79 x win:
+___  x__  xo_  xox  xox  xox  xox  xox  
+___  ___  ___  ___  o__  ox_  oxo  oxo  
+___  ___  ___  ___  ___  ___  ___  x__  
+
+game 80 x win:
+___  x__  xo_  xox  xox  xox  xox  xox  
+___  ___  ___  ___  o__  ox_  oxo  oxo  
+___  ___  ___  ___  ___  ___  ___  x__  
+
+game 81 x win:
+___  x__  xo_  xox  xox  xox  xox  xox  
+___  ___  ___  ___  o__  ox_  oxo  oxo  
+___  ___  ___  ___  ___  ___  ___  x__  
+
+game 82 x win:
+___  x__  xo_  xox  xox  xox  xox  xox  
+___  ___  ___  ___  o__  ox_  oxo  oxo  
+___  ___  ___  ___  ___  ___  ___  x__  
+
+game 83 x win:
+___  x__  xo_  xox  xox  xox  xox  xox  
+___  ___  ___  ___  o__  ox_  oxo  oxo  
+___  ___  ___  ___  ___  ___  ___  x__  
+
+game 84 x win:
+___  x__  xo_  xox  xox  xox  xox  xox  
+___  ___  ___  ___  o__  ox_  oxo  oxo  
+___  ___  ___  ___  ___  ___  ___  x__  
+
+game 85 x win:
+___  x__  xo_  xox  xox  xox  xox  xox  
+___  ___  ___  ___  o__  ox_  oxo  oxo  
+___  ___  ___  ___  ___  ___  ___  x__  
+
+game 86 x win:
+___  x__  xo_  xox  xox  xox  xox  xox  
+___  ___  ___  ___  o__  ox_  oxo  oxo  
+___  ___  ___  ___  ___  ___  ___  x__  
+
+game 87 x win:
+___  x__  xo_  xox  xox  xox  xox  xox  
+___  ___  ___  ___  o__  ox_  oxo  oxo  
+___  ___  ___  ___  ___  ___  ___  x__  
+
+game 88 x win:
+___  x__  xo_  xox  xox  xox  xox  xox  
+___  ___  ___  ___  o__  ox_  oxo  oxo  
+___  ___  ___  ___  ___  ___  ___  x__  
+
+game 89 x win:
+___  x__  xo_  xox  xox  xox  xox  xox  
+___  ___  ___  ___  o__  ox_  oxo  oxo  
+___  ___  ___  ___  ___  ___  ___  x__  
+
+game 90 x win:
+___  x__  xo_  xox  xox  xox  xox  xox  
+___  ___  ___  ___  o__  ox_  oxo  oxo  
+___  ___  ___  ___  ___  ___  ___  x__  
+
+game 91 x win:
+___  x__  xo_  xox  xox  xox  xox  xox  
+___  ___  ___  ___  o__  ox_  oxo  oxo  
+___  ___  ___  ___  ___  ___  ___  x__  
+
+game 92 x win:
+___  x__  xo_  xox  xox  xox  xox  xox  
+___  ___  ___  ___  o__  ox_  oxo  oxo  
+___  ___  ___  ___  ___  ___  ___  x__  
+
+game 93 x win:
+___  x__  xo_  xox  xox  xox  xox  xox  
+___  ___  ___  ___  o__  ox_  oxo  oxo  
+___  ___  ___  ___  ___  ___  ___  x__  
+
+game 94 x win:
+___  x__  xo_  xox  xox  xox  xox  xox  
+___  ___  ___  ___  o__  ox_  oxo  oxo  
+___  ___  ___  ___  ___  ___  ___  x__  
+
+game 95 x win:
+___  x__  xo_  xox  xox  xox  xox  xox  
+___  ___  ___  ___  o__  ox_  oxo  oxo  
+___  ___  ___  ___  ___  ___  ___  x__  
+
+game 96 x win:
+___  x__  xo_  xox  xox  xox  xox  xox  
+___  ___  ___  ___  o__  ox_  oxo  oxo  
+___  ___  ___  ___  ___  ___  ___  x__  
+
+game 97 x win:
+___  x__  xo_  xox  xox  xox  xox  xox  
+___  ___  ___  ___  o__  ox_  oxo  oxo  
+___  ___  ___  ___  ___  ___  ___  x__  
+
+game 98 x win:
+___  x__  xo_  xox  xox  xox  xox  xox  
+___  ___  ___  ___  o__  ox_  oxo  oxo  
+___  ___  ___  ___  ___  ___  ___  x__  
+
+game 99 x win:
+___  x__  xo_  xox  xox  xox  xox  xox  
+___  ___  ___  ___  o__  ox_  oxo  oxo  
+___  ___  ___  ___  ___  ___  ___  x__  
+
+results after 100 games: x win = 100, o win = 0, draws = 0

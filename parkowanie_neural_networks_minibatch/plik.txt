@@ -4,3 +4,6 @@ po wczytaniu parametrow np. szer_park = 8.6
 wczytaj_historie: Odczytano4 epizodow
 wczytaj_historie: Odczytano4 epizodow
 wczytaj_historie: Odczytano4 epizodow
+wczytaj_historie: Odczytano4 epizodow
+wczytaj_historie: Odczytano4 epizodow
+wczytaj_historie: Odczytano4 epizodow

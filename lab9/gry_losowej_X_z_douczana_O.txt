@@ -1,0 +1,501 @@
+game 0 draw:
+___  ___  ___  ___  __o  __o  o_o  oxo  oxo  oxo  
+___  ___  o__  ox_  ox_  ox_  ox_  ox_  ox_  oxx  
+___  __x  __x  __x  __x  x_x  x_x  x_x  xox  xox  
+
+game 1 x win:
+___  ___  ___  ___  ___  x__  x__  x__  
+___  ___  __o  _xo  oxo  oxo  oxo  oxo  
+___  x__  x__  x__  x__  x__  xo_  xox  
+
+game 2 x win:
+___  ___  ___  _x_  _x_  _x_  ox_  oxx  
+___  _x_  _x_  _x_  _x_  _x_  _x_  _x_  
+___  ___  _o_  _o_  _oo  xoo  xoo  xoo  
+
+game 3 x win:
+___  ___  ___  ___  ___  ___  o__  ox_  oxo  oxo  
+___  _x_  _x_  _xx  _xx  _xx  _xx  _xx  _xx  xxx  
+___  ___  __o  __o  _oo  xoo  xoo  xoo  xoo  xoo  
+
+game 4 x win:
+___  ___  o__  ox_  ox_  ox_  ox_  ox_  ox_  oxx  
+___  ___  ___  ___  o__  o__  o__  o_x  oox  oox  
+___  x__  x__  x__  x__  x_x  xox  xox  xox  xox  
+
+game 5 o win:
+___  ___  ___  ___  _o_  _ox  oox  oox  oox  
+___  ___  _o_  xo_  xo_  xo_  xo_  xo_  xo_  
+___  x__  x__  x__  x__  x__  x__  x_x  xox  
+
+game 6 x win:
+___  ___  __o  __o  o_o  o_o  
+___  ___  ___  ___  ___  ___  
+___  _x_  _x_  xx_  xx_  xxx  
+
+game 7 o win:
+___  ___  ___  _x_  _x_  _x_  _xo  _xo  _xo  
+___  ___  ___  ___  ___  x__  x__  xx_  xxo  
+___  x__  x_o  x_o  xoo  xoo  xoo  xoo  xoo  
+
+game 8 x win:
+___  _x_  _xo  xxo  xxo  xxo  xxo  xxo  
+___  ___  ___  ___  o__  ox_  oxo  oxo  
+___  ___  ___  ___  ___  ___  ___  _x_  
+
+game 9 x win:
+___  ___  o__  o_x  oox  oox  oox  oox  oox  oox  
+___  x__  x__  x__  x__  x__  x_o  x_o  x_o  xxo  
+___  ___  ___  ___  ___  x__  x__  x_x  xox  xox  
+
+game 10 x win:
+___  ___  o__  ox_  ox_  ox_  ox_  oxx  oxx  oxx  
+___  x__  x__  x__  x__  xx_  xx_  xx_  xxo  xxo  
+___  ___  ___  ___  __o  __o  o_o  o_o  o_o  oxo  
+
+game 11 draw:
+___  ___  ___  _x_  _x_  _xx  oxx  oxx  oxx  oxx  
+___  x__  x__  x__  xo_  xo_  xo_  xo_  xoo  xoo  
+___  ___  _o_  _o_  _o_  _o_  _o_  _ox  _ox  xox  
+
+game 12 draw:
+___  x__  xo_  xo_  xo_  xo_  xo_  xo_  xo_  xox  
+___  ___  ___  x__  x__  x__  xo_  xox  xox  xox  
+___  ___  ___  ___  __o  _xo  _xo  _xo  oxo  oxo  
+
+game 13 x win:
+___  __x  __x  _xx  _xx  _xx  _xx  _xx  _xx  xxx  
+___  ___  ___  ___  o__  o__  o__  o_x  oox  oox  
+___  ___  _o_  _o_  _o_  xo_  xoo  xoo  xoo  xoo  
+
+game 14 x win:
+___  _x_  _x_  _x_  _x_  _x_  _x_  _x_  _xo  xxo  
+___  ___  ___  __x  o_x  oxx  oxx  oxx  oxx  oxx  
+___  ___  o__  o__  o__  o__  oo_  oox  oox  oox  
+
+game 15 o win:
+___  ___  ___  _x_  _x_  _xx  oxx  oxx  oxx  
+___  ___  o__  o__  o_o  o_o  o_o  o_o  ooo  
+___  __x  __x  __x  __x  __x  __x  x_x  x_x  
+
+game 16 draw:
+___  ___  ___  x__  xo_  xo_  xo_  xox  xox  xox  
+___  x__  x__  x__  x__  xx_  xx_  xx_  xxo  xxo  
+___  ___  o__  o__  o__  o__  o_o  o_o  o_o  oxo  
+
+game 17 x win:
+___  ___  ___  ___  _o_  _o_  _oo  xoo  
+___  ___  ___  _x_  _x_  xx_  xx_  xx_  
+___  x__  x_o  x_o  x_o  x_o  x_o  x_o  
+
+game 18 o win:
+___  ___  _o_  _o_  _o_  _ox  _ox  
+___  ___  ___  ___  _o_  _o_  _o_  
+___  x__  x__  x_x  x_x  x_x  xox  
+
+game 19 o win:
+___  x__  xo_  xo_  xo_  xo_  xo_  
+___  ___  ___  ___  _o_  _ox  _ox  
+___  ___  ___  x__  x__  x__  xo_  
+
+game 20 o win:
+___  ___  ___  ___  o__  o__  o_o  o_o  o_o  
+___  x__  x__  x_x  x_x  x_x  x_x  x_x  xox  
+___  ___  o__  o__  o__  ox_  ox_  oxx  oxx  
+
+game 21 draw:
+___  ___  ___  _x_  ox_  ox_  ox_  oxx  oxx  oxx  
+___  _x_  _xo  _xo  _xo  xxo  xxo  xxo  xxo  xxo  
+___  ___  ___  ___  ___  ___  o__  o__  oo_  oox  
+
+game 22 x win:
+___  ___  ___  ___  __o  __o  _oo  _oo  
+___  ___  ___  __x  __x  x_x  x_x  xxx  
+___  __x  _ox  _ox  _ox  _ox  _ox  _ox  
+
+game 23 x win:
+___  ___  _o_  _o_  _o_  _o_  oo_  oox  oox  oox  
+___  x__  x__  x__  x_o  xxo  xxo  xxo  xxo  xxo  
+___  ___  ___  _x_  _x_  _x_  _x_  _x_  _xo  xxo  
+
+game 24 draw:
+___  x__  xo_  xo_  xo_  xox  xox  xox  xox  xox  
+___  ___  ___  ___  ___  ___  o__  o_x  o_x  oxx  
+___  ___  ___  _x_  _xo  _xo  _xo  _xo  oxo  oxo  
+
+game 25 draw:
+___  ___  ___  __x  o_x  o_x  o_x  o_x  oox  oox  
+___  x__  x__  x__  x__  x__  x_o  x_o  x_o  xxo  
+___  ___  o__  o__  o__  ox_  ox_  oxx  oxx  oxx  
+
+game 26 draw:
+___  ___  ___  ___  ___  x__  x_o  x_o  x_o  xxo  
+___  ___  o__  o__  oo_  oo_  oo_  oox  oox  oox  
+___  x__  x__  x_x  x_x  x_x  x_x  x_x  xox  xox  
+
+game 27 o win:
+___  ___  ___  __x  __x  __x  __x  __x  o_x  
+___  x__  xo_  xo_  xo_  xox  xox  xox  xox  
+___  ___  ___  ___  o__  o__  o_o  oxo  oxo  
+
+game 28 draw:
+___  ___  ___  _x_  _x_  _xx  _xx  _xx  oxx  oxx  
+___  ___  ___  ___  __o  __o  _oo  xoo  xoo  xoo  
+___  __x  o_x  o_x  o_x  o_x  o_x  o_x  o_x  oxx  
+
+game 29 x win:
+___  _x_  _x_  _x_  _x_  _x_  _xo  _xo  
+___  ___  __o  __o  _oo  _oo  _oo  _oo  
+___  ___  ___  x__  x__  x_x  x_x  xxx  
+
+game 30 o win:
+___  ___  _o_  _o_  _oo  _oo  ooo  
+___  ___  ___  ___  ___  __x  __x  
+___  _x_  _x_  _xx  _xx  _xx  _xx  
+
+game 31 x win:
+___  ___  ___  __x  o_x  o_x  
+___  _x_  _x_  _x_  _x_  _x_  
+___  ___  _o_  _o_  _o_  xo_  
+
+game 32 o win:
+___  x__  xo_  xo_  xo_  xo_  xo_  xo_  xoo  
+___  ___  ___  x__  xo_  xo_  xo_  xox  xox  
+___  ___  ___  ___  ___  _x_  ox_  ox_  ox_  
+
+game 33 draw:
+___  ___  ___  _x_  _x_  _x_  _xo  _xo  oxo  oxo  
+___  x__  xo_  xo_  xo_  xox  xox  xox  xox  xox  
+___  ___  ___  ___  _o_  _o_  _o_  _ox  _ox  xox  
+
+game 34 x win:
+___  x__  xo_  xo_  xo_  xox  xox  xox  xox  xox  
+___  ___  ___  _x_  _xo  _xo  _xo  xxo  xxo  xxo  
+___  ___  ___  ___  ___  ___  o__  o__  oo_  oox  
+
+game 35 o win:
+___  ___  __o  __o  _oo  _oo  ooo  
+___  __x  __x  __x  __x  _xx  _xx  
+___  ___  ___  _x_  _x_  _x_  _x_  
+
+game 36 x win:
+___  ___  o__  ox_  ox_  ox_  ox_  ox_  
+___  __x  __x  __x  __x  _xx  _xx  _xx  
+___  ___  ___  ___  __o  __o  o_o  oxo  
+
+game 37 x win:
+___  _x_  _x_  _x_  _xo  xxo  xxo  xxo  xxo  xxo  
+___  ___  ___  ___  ___  ___  o__  o__  o_o  oxo  
+___  ___  _o_  _ox  _ox  _ox  _ox  xox  xox  xox  
+
+game 38 x win:
+___  _x_  _x_  _x_  _x_  _xx  oxx  oxx  oxx  oxx  
+___  ___  ___  ___  __o  __o  __o  __o  o_o  oxo  
+___  ___  _o_  xo_  xo_  xo_  xo_  xox  xox  xox  
+
+game 39 x win:
+___  x__  xo_  xox  xox  xox  xox  xox  
+___  ___  ___  ___  o__  ox_  oxo  oxo  
+___  ___  ___  ___  ___  ___  ___  __x  
+
+game 40 x win:
+___  ___  _o_  _o_  _o_  _o_  _oo  xoo  
+___  ___  ___  x__  x_o  x_o  x_o  x_o  
+___  __x  __x  __x  __x  x_x  x_x  x_x  
+
+game 41 o win:
+___  ___  __o  x_o  x_o  x_o  x_o  xxo  xxo  
+___  ___  ___  ___  __o  __o  _oo  _oo  ooo  
+___  __x  __x  __x  __x  _xx  _xx  _xx  _xx  
+
+game 42 x win:
+___  __x  _ox  _ox  _ox  _ox  oox  oox  oox  oox  
+___  ___  ___  ___  ___  x__  x__  x__  x_o  xxo  
+___  ___  ___  __x  _ox  _ox  _ox  xox  xox  xox  
+
+game 43 x win:
+___  ___  ___  ___  _o_  _o_  oo_  oox  oox  oox  
+___  __x  o_x  o_x  o_x  o_x  o_x  o_x  o_x  oxx  
+___  ___  ___  _x_  _x_  xx_  xx_  xx_  xxo  xxo  
+
+game 44 x win:
+___  ___  _o_  xo_  xo_  xo_  
+___  x__  x__  x__  x__  x__  
+___  ___  ___  ___  _o_  xo_  
+
+game 45 o win:
+___  ___  ___  ___  ___  ___  __o  
+___  __x  _ox  xox  xox  xox  xox  
+___  ___  ___  ___  o__  ox_  ox_  
+
+game 46 x win:
+___  x__  xo_  xox  xox  xox  xox  xox  xox  xox  
+___  ___  ___  ___  o__  ox_  oxo  oxo  oxo  oxo  
+___  ___  ___  ___  ___  ___  ___  _x_  ox_  oxx  
+
+game 47 x win:
+___  ___  o__  o__  oo_  oox  oox  oox  oox  oox  
+___  _x_  _x_  _x_  _x_  _x_  _x_  xx_  xx_  xxx  
+___  ___  ___  __x  __x  __x  o_x  o_x  oox  oox  
+
+game 48 x win:
+___  __x  _ox  _ox  _ox  _ox  _ox  _ox  
+___  ___  ___  _x_  _x_  _x_  _x_  _xx  
+___  ___  ___  ___  o__  o_x  oox  oox  
+
+game 49 x win:
+___  ___  ___  _x_  _x_  _x_  _x_  _xx  
+___  _x_  _xo  _xo  _xo  _xo  oxo  oxo  
+___  ___  ___  ___  _o_  xo_  xo_  xo_  
+
+game 50 draw:
+___  __x  __x  x_x  xox  xox  xox  xox  xox  xox  
+___  ___  ___  ___  ___  __x  o_x  o_x  o_x  oxx  
+___  ___  __o  __o  __o  __o  __o  _xo  oxo  oxo  
+
+game 51 o win:
+___  ___  ___  ___  ___  x__  x__  xx_  xxo  
+___  x__  x__  x__  x__  x__  xo_  xo_  xo_  
+___  ___  o__  ox_  oxo  oxo  oxo  oxo  oxo  
+
+game 52 x win:
+___  __x  _ox  _ox  _ox  _ox  oox  oox  oox  oox  
+___  ___  ___  _x_  ox_  oxx  oxx  oxx  oxx  oxx  
+___  ___  ___  ___  ___  ___  ___  _x_  _xo  xxo  
+
+game 53 o win:
+___  ___  ___  __x  __x  __x  o_x  o_x  o_x  
+___  ___  __o  __o  __o  __o  __o  x_o  xoo  
+___  x__  x__  x__  x_o  xxo  xxo  xxo  xxo  
+
+game 54 x win:
+___  ___  ___  ___  __o  _xo  
+___  ___  __o  _xo  _xo  _xo  
+___  _x_  _x_  _x_  _x_  _x_  
+
+game 55 x win:
+___  ___  o__  o__  oo_  oo_  oo_  oo_  
+___  ___  ___  __x  __x  _xx  _xx  xxx  
+___  x__  x__  x__  x__  x__  x_o  x_o  
+
+game 56 x win:
+___  _x_  _xo  _xo  _xo  xxo  xxo  xxo  
+___  ___  ___  ___  __o  __o  o_o  oxo  
+___  ___  ___  _x_  _x_  _x_  _x_  _x_  
+
+game 57 x win:
+___  ___  _o_  _o_  _o_  _ox  _ox  _ox  
+___  _x_  _x_  _x_  _xo  _xo  _xo  _xo  
+___  ___  ___  _x_  _x_  _x_  _xo  xxo  
+
+game 58 draw:
+___  ___  ___  x__  x_o  x_o  x_o  xxo  xxo  xxo  
+___  ___  ___  ___  ___  __x  _ox  _ox  oox  oox  
+___  x__  xo_  xo_  xo_  xo_  xo_  xo_  xo_  xox  
+
+game 59 o win:
+___  ___  __o  __o  __o  _xo  oxo  oxo  oxo  
+___  ___  ___  __x  _ox  _ox  _ox  _ox  _ox  
+___  _x_  _x_  _x_  _x_  _x_  _x_  _xx  oxx  
+
+game 60 draw:
+___  __x  __x  __x  __x  _xx  oxx  oxx  oxx  oxx  
+___  ___  _o_  _o_  _o_  _o_  _o_  _o_  _oo  xoo  
+___  ___  ___  __x  _ox  _ox  _ox  xox  xox  xox  
+
+game 61 x win:
+___  __x  __x  __x  __x  __x  _ox  xox  
+___  ___  ___  ___  ___  _x_  _x_  _x_  
+___  ___  _o_  _ox  oox  oox  oox  oox  
+
+game 62 x win:
+___  __x  o_x  oxx  oxx  oxx  oxx  oxx  
+___  ___  ___  ___  ___  ___  ___  __x  
+___  ___  ___  ___  _o_  _ox  oox  oox  
+
+game 63 o win:
+___  __x  o_x  o_x  o_x  o_x  o_x  oxx  oxx  
+___  ___  ___  _x_  _x_  _xx  _xx  _xx  oxx  
+___  ___  ___  ___  _o_  _o_  oo_  oo_  oo_  
+
+game 64 x win:
+___  ___  _o_  _o_  _oo  _oo  _oo  _oo  _oo  xoo  
+___  ___  ___  ___  ___  __x  o_x  oxx  oxx  oxx  
+___  __x  __x  x_x  x_x  x_x  x_x  x_x  xox  xox  
+
+game 65 o win:
+___  _x_  _x_  _x_  _x_  _xx  _xx  _xx  oxx  
+___  ___  _o_  _o_  _o_  _o_  _oo  _oo  _oo  
+___  ___  ___  _x_  _xo  _xo  _xo  xxo  xxo  
+
+game 66 o win:
+___  ___  o__  o__  o_o  oxo  oxo  oxo  oxo  
+___  ___  ___  ___  ___  ___  __o  x_o  x_o  
+___  _x_  _x_  xx_  xx_  xx_  xx_  xx_  xxo  
+
+game 67 draw:
+___  ___  __o  __o  __o  _xo  _xo  _xo  _xo  xxo  
+___  _x_  _x_  _xx  oxx  oxx  oxx  oxx  oxx  oxx  
+___  ___  ___  ___  ___  ___  __o  x_o  xoo  xoo  
+
+game 68 x win:
+___  ___  ___  _x_  _x_  xx_  xxo  xxo  
+___  _x_  _x_  _x_  ox_  ox_  ox_  ox_  
+___  ___  _o_  _o_  _o_  _o_  _o_  _ox  
+
+game 69 x win:
+___  ___  ___  __x  _ox  _ox  _ox  _ox  
+___  __x  __x  __x  __x  x_x  x_x  xxx  
+___  ___  _o_  _o_  _o_  _o_  oo_  oo_  
+
+game 70 draw:
+___  ___  ___  ___  ___  ___  ___  x__  x_o  xxo  
+___  __x  __x  __x  __x  _xx  oxx  oxx  oxx  oxx  
+___  ___  _o_  xo_  xoo  xoo  xoo  xoo  xoo  xoo  
+
+game 71 x win:
+___  _x_  _x_  _x_  _x_  _x_  ox_  ox_  ox_  oxx  
+___  ___  __o  x_o  x_o  xxo  xxo  xxo  xxo  xxo  
+___  ___  ___  ___  _o_  _o_  _o_  xo_  xoo  xoo  
+
+game 72 o win:
+___  ___  __o  x_o  x_o  x_o  x_o  x_o  xoo  
+___  ___  ___  ___  ___  __x  _ox  _ox  _ox  
+___  __x  __x  __x  _ox  _ox  _ox  xox  xox  
+
+game 73 o win:
+___  ___  o__  o__  o__  o__  oo_  oo_  ooo  
+___  ___  ___  ___  o__  ox_  ox_  oxx  oxx  
+___  __x  __x  x_x  x_x  x_x  x_x  x_x  x_x  
+
+game 74 draw:
+___  ___  o__  o__  o__  o__  o__  ox_  oxo  oxo  
+___  _x_  _x_  _x_  _x_  _xx  oxx  oxx  oxx  oxx  
+___  ___  ___  x__  xo_  xo_  xo_  xo_  xo_  xox  
+
+game 75 o win:
+___  ___  ___  _x_  _x_  _xx  _xx  _xx  oxx  
+___  ___  ___  ___  o__  o__  oo_  oo_  oo_  
+___  x__  x_o  x_o  x_o  x_o  x_o  xxo  xxo  
+
+game 76 o win:
+___  ___  ___  ___  ___  __x  __x  
+___  ___  _o_  _o_  oo_  oo_  ooo  
+___  x__  x__  xx_  xx_  xx_  xx_  
+
+game 77 o win:
+___  _x_  ox_  ox_  ox_  oxx  oxx  oxx  oxx  
+___  ___  ___  ___  _o_  _o_  _oo  _oo  ooo  
+___  ___  ___  _x_  _x_  _x_  _x_  _xx  _xx  
+
+game 78 x win:
+___  ___  _o_  _o_  _o_  xo_  
+___  ___  ___  _x_  _x_  _x_  
+___  __x  __x  __x  o_x  o_x  
+
+game 79 x win:
+___  _x_  _x_  _x_  _xo  _xo  oxo  oxo  oxo  oxo  
+___  ___  o__  ox_  ox_  ox_  ox_  oxx  oxx  oxx  
+___  ___  ___  ___  ___  x__  x__  x__  x_o  xxo  
+
+game 80 x win:
+___  x__  xo_  xo_  xo_  xo_  xoo  xoo  xoo  xoo  
+___  ___  ___  __x  __x  __x  __x  x_x  x_x  xxx  
+___  ___  ___  ___  o__  ox_  ox_  ox_  oxo  oxo  
+
+game 81 o win:
+___  ___  ___  _x_  _x_  _xx  _xx  
+___  __x  __x  __x  __x  __x  __x  
+___  ___  o__  o__  oo_  oo_  ooo  
+
+game 82 x win:
+___  ___  _o_  _o_  _o_  _o_  _o_  _ox  
+___  __x  __x  __x  _ox  _ox  _ox  _ox  
+___  ___  ___  __x  __x  _xx  oxx  oxx  
+
+game 83 x win:
+___  ___  _o_  _ox  _ox  _ox  _ox  _ox  
+___  __x  __x  __x  o_x  o_x  o_x  oxx  
+___  ___  ___  ___  ___  x__  x_o  x_o  
+
+game 84 x win:
+___  ___  _o_  _o_  oo_  oo_  
+___  ___  ___  ___  ___  ___  
+___  x__  x__  xx_  xx_  xxx  
+
+game 85 x win:
+___  x__  xo_  xo_  xoo  xoo  
+___  ___  ___  ___  ___  _x_  
+___  ___  ___  __x  __x  __x  
+
+game 86 o win:
+___  ___  o__  o__  o_o  o_o  ooo  
+___  __x  __x  __x  __x  _xx  _xx  
+___  ___  ___  x__  x__  x__  x__  
+
+game 87 o win:
+___  ___  ___  ___  ___  ___  _o_  
+___  x__  xo_  xo_  xo_  xo_  xo_  
+___  ___  ___  x__  xo_  xox  xox  
+
+game 88 draw:
+___  _x_  _x_  _xx  _xx  _xx  oxx  oxx  oxx  oxx  
+___  ___  _o_  _o_  _o_  xo_  xo_  xo_  xoo  xoo  
+___  ___  ___  ___  o__  o__  o__  ox_  ox_  oxx  
+
+game 89 x win:
+___  __x  __x  __x  o_x  o_x  o_x  o_x  
+___  ___  ___  ___  ___  x__  xo_  xox  
+___  ___  _o_  _ox  _ox  _ox  _ox  _ox  
+
+game 90 x win:
+___  __x  __x  _xx  _xx  _xx  _xx  xxx  
+___  ___  ___  ___  ___  ___  o__  o__  
+___  ___  __o  __o  o_o  oxo  oxo  oxo  
+
+game 91 x win:
+___  ___  o__  o_x  o_x  oxx  oxx  oxx  oxx  oxx  
+___  ___  ___  ___  ___  ___  o__  o__  o_o  oxo  
+___  x__  x__  x__  xo_  xo_  xo_  xox  xox  xox  
+
+game 92 x win:
+___  _x_  _x_  _x_  _x_  _x_  ox_  ox_  ox_  oxx  
+___  ___  ___  __x  _ox  _ox  _ox  xox  xox  xox  
+___  ___  o__  o__  o__  o_x  o_x  o_x  oox  oox  
+
+game 93 o win:
+___  ___  _o_  _o_  oo_  oo_  ooo  
+___  ___  ___  ___  ___  __x  __x  
+___  _x_  _x_  _xx  _xx  _xx  _xx  
+
+game 94 o win:
+___  ___  _o_  _o_  _o_  xo_  xoo  xoo  xoo  
+___  ___  ___  ___  ___  ___  ___  x__  xo_  
+___  _x_  _x_  _xx  oxx  oxx  oxx  oxx  oxx  
+
+game 95 o win:
+___  ___  ___  ___  ___  ___  o__  
+___  __x  __x  _xx  oxx  oxx  oxx  
+___  ___  o__  o__  o__  o_x  o_x  
+
+game 96 x win:
+___  ___  _o_  _ox  _ox  _ox  oox  oox  
+___  __x  __x  __x  __x  x_x  x_x  xxx  
+___  ___  ___  ___  _o_  _o_  _o_  _o_  
+
+game 97 x win:
+___  ___  ___  ___  ___  ___  __o  _xo  oxo  oxo  
+___  x__  x__  xx_  xx_  xx_  xx_  xx_  xx_  xxx  
+___  ___  __o  __o  _oo  xoo  xoo  xoo  xoo  xoo  
+
+game 98 x win:
+___  x__  xo_  xo_  xo_  xo_  xoo  xoo  xoo  xoo  
+___  ___  ___  _x_  _x_  _x_  _x_  xx_  xx_  xxx  
+___  ___  ___  ___  o__  ox_  ox_  ox_  oxo  oxo  
+
+game 99 x win:
+___  _x_  _xo  _xo  _xo  _xo  _xo  _xo  
+___  ___  ___  ___  o__  o__  o_o  o_o  
+___  ___  ___  x__  x__  x_x  x_x  xxx  
+
+results after 100 games: x win = 54, o win = 29, draws = 17
